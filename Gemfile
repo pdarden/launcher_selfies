@@ -21,9 +21,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -46,6 +43,7 @@ end
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'simple_form'
 gem 'hirb'
+gem 'twitter'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -56,8 +54,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'nyan-cat-formatter'
-  gem 'email_spec'
-  gem 'mailcatcher'
+  gem 'dotenv-rails'
 end
 
 group :development do
