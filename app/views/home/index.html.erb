@@ -1,1 +1,12 @@
-<h1>Welcome to #launch_academy_selfie</h1>
+<h1 class="text-center">Welcome to #launch_academy_selfie</h1>
+<% @tweets.collect do |tweet| %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+      <p><%= image_tag tweet.user.profile_image_url %> <a href="https://twitter.com/<%= tweet.user.screen_name %>">@<%= tweet.user.screen_name %></a></p><br>
+      <a href=<%= tweet.media[0]["expanded_url"] %>><%= image_tag tweet.media[0]["media_url"] %></a><br>
+      <div class="caption">
+        <%= tweet.text %>
+      </div>
+    </div>
+  </div>
+<% end %>

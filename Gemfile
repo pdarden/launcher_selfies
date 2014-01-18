@@ -48,12 +48,6 @@ gem 'twitter'
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
-  gem 'launchy'
-  gem 'factory_girl_rails'
-  gem 'valid_attribute'
-  gem 'shoulda-matchers'
-  gem 'capybara'
-  gem 'nyan-cat-formatter'
   gem 'dotenv-rails'
 end
 
