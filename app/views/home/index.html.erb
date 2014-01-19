@@ -3,7 +3,9 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="thumbnail">
       <p><%= image_tag tweet.user.profile_image_url %> <a href="https://twitter.com/<%= tweet.user.screen_name %>">@<%= tweet.user.screen_name %></a></p><br>
-      <a href=<%= tweet.media[0]["expanded_url"] %>><%= image_tag tweet.media[0]["media_url"] %></a><br>
+      <% if tweet.media.present? %>
+        <a href=<%= tweet.media[0]["expanded_url"] %>><%= image_tag tweet.media[0]["media_url"] %></a><br>
+      <% end %>
       <div class="caption">
         <%= tweet.text %>
       </div>
