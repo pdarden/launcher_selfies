@@ -6,4 +6,7 @@ class HomeController < ApplicationController
     end
     @tweets = @client.search("#launch_academy_selfie -rt")
   end
+
+  def about
+  end
 end
