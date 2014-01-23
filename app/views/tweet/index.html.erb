@@ -1,0 +1,13 @@
+<h1 class="text-center">Welcome to #launch_academy_selfie</h1>
+<% @tweets.each do |tweet| %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="thumbnail">
+      <p><%= image_tag tweet.profile_image %> <a href="https://twitter.com/<%= tweet.username %>">@<%= tweet.username %></a></p>
+      <p><%= tweet.tweet_created_at.strftime('%b %d, %Y') %></p><br>
+        <a href=<%= tweet.image_url %>><%= image_tag tweet.image %></a><br>
+      <div class="caption">
+        <%= tweet.text %>
+      </div>
+    </div>
+  </div>
+<% end %>

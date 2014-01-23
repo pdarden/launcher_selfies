@@ -1,6 +1,6 @@
 LauncherSelfies::Application.routes.draw do
-  root 'home#index'
-  get "about", to:"home#about", as: "home_about"
+  root 'tweet#index'
+  get "about", to:"tweet#about", as: "tweet_about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -45,6 +45,7 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'simple_form'
 gem 'hirb'
 gem 'twitter'
+gem 'chronic'
 
 group :test, :development do
   gem 'rspec-rails'
