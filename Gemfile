@@ -46,6 +46,8 @@ gem 'simple_form'
 gem 'hirb'
 gem 'twitter'
 gem 'chronic'
+gem 'kaminari'
+
 
 group :test, :development do
   gem 'rspec-rails'
