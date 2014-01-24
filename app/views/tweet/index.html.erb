@@ -11,6 +11,6 @@
     </div>
   </div>
 <% end %>
-<div class="col-md-8 col-md-offset-2">
-  <%= paginate @tweets %>
-  </div>
+<div class="col-md-8 col-md-offset-2 text-center">
+  <%= paginate @tweets, theme: 'twitter-bootstrap-3', pagination_class: 'pagination-sm' %>
+</div>

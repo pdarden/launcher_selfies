@@ -47,6 +47,7 @@ gem 'hirb'
 gem 'twitter'
 gem 'chronic'
 gem 'kaminari'
+gem "bootstrap-kaminari-views", "~> 0.0.3"
 
 
 group :test, :development do
