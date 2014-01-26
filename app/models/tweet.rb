@@ -17,5 +17,18 @@ class Tweet < ActiveRecord::Base
         end
       end
     end
+
+    @client.search("#launchacademyselfie -rt").collect do |recent_tweet|
+      if recent_tweet.media[0].present?
+        Tweet.find_or_create_by(text: recent_tweet.text) do |tweet|
+          tweet.username = recent_tweet.user.screen_name
+          tweet.profile_image = recent_tweet.user.profile_image_url.to_s
+          tweet.text = recent_tweet.text
+          tweet.image = recent_tweet.media[0]["media_url"].to_s
+          tweet.image_url = recent_tweet.media[0]["expanded_url"].to_s
+          tweet.tweet_created_at = recent_tweet.created_at
+        end
+      end
+    end
   end
 end
