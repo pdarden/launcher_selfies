@@ -6,7 +6,7 @@
       <p><%= tweet.tweet_created_at.strftime('%b %d, %Y') %></p><br>
         <a href=<%= tweet.image_url %>><%= image_tag tweet.image %></a><br>
       <div class="caption">
-        <%= tweet.text %>
+        <%= tweet.linked_text.html_safe %>
       </div>
     </div>
   </div>
