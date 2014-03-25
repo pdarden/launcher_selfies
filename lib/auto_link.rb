@@ -1,7 +1,7 @@
 module AutoLink
   extend ActiveSupport::Concern
 
-  REGEX_MAP = {mentions: "@[0-9A-Za-z_]+", hashtags: "#[0-9A-Za-z_]+"}
+  REGEX_MAP = {mentions: "@[0-9A-Za-z_]+", hashtags: "#[0-9A-Za-z_]+", https: "http://t.co/[A-Za-z]+"}
 
   included do
     def self.auto_link(target, options={})
@@ -9,7 +9,11 @@ module AutoLink
         regex = Array(options[:on]).map { |matcher| REGEX_MAP[matcher] }.join('|')
 
         self.send(target).gsub(/#{regex}/) do |capture|
-          "<a href='http://twitter.com/#{capture}' target='_blank'>#{capture}</a>"
+          if capture.include?("http://")
+            "<a href='#{capture}' target='_blank'>#{capture}</a>"
+          else
+            "<a href='http://twitter.com/#{capture}' target='_blank'>#{capture}</a>"
+          end
         end
       end
     end
