@@ -1,7 +1,7 @@
 class Tweet < ActiveRecord::Base
   include AutoLink
 
-  auto_link :text, on: [:mentions, :hashtags, :https]
+  auto_link :text, on: [:mentions, :hashtags, :https, :pic]
 
   @client = Twitter::REST::Client.new do |config|
     config.consumer_key        = ENV["YOUR_CONSUMER_KEY"]
