@@ -1,7 +1,7 @@
 module AutoLink
   extend ActiveSupport::Concern
 
-  REGEX_MAP = {mentions: "@[0-9A-Za-z_]+", hashtags: "#[0-9A-Za-z_]+", https: "http://t.co/[A-Za-z]+"}
+  REGEX_MAP = {mentions: "@[0-9A-Za-z_]+", hashtags: "#[0-9A-Za-z_]+", https: "http://t.co/[0-9A-Za-z]+"}
 
   included do
     def self.auto_link(target, options={})
